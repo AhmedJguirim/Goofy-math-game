@@ -10,7 +10,7 @@ const Registration = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (userData?.loggedIn) {
+    if (userData?.name) {
       navigate("/");
     }
   }, [updateUser]);

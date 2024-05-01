@@ -5,6 +5,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./pages/Login";
 import { UserProvider } from "./context/UserContext";
 import Nav from "./pages/Nav";
+import GameMode from "./pages/GameMode";
+import IronMan from "./pages/IronMan";
 const router = createBrowserRouter([
   {
     path: `/login`,
@@ -15,8 +17,16 @@ const router = createBrowserRouter([
     element: <Registration />,
   },
   {
-    path: `/`,
+    path: `/game`,
     element: <Game />,
+  },
+  {
+    path: `/ironMan`,
+    element: <IronMan />,
+  },
+  {
+    path: `/mode`,
+    element: <GameMode />,
   },
 ]);
 function App() {

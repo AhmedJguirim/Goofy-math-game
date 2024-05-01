@@ -13,10 +13,10 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (userData?.loggedIn) {
-      navigate("/");
+    if (userData?.name) {
+      navigate("/mode");
     }
-  }, [updateUser]);
+  }, [userData]);
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -29,8 +29,7 @@ const Login = () => {
         password,
       })
       .then((res) => {
-        event.preventDefault();
-        updateUser({ ...res.data, loggedIn: true });
+        updateUser(res.data);
       })
       .catch((err) => console.error(err));
   };
